@@ -1,0 +1,245 @@
+ body{
+		margin:0;
+   }
+   
+
+ 
+  header {
+  background: #fbd46d;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.4s ease-in-out;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+.nav-toggle-label span::after {
+  top: 7px;
+}
+.nav-toggle:checked ~ .nav-toggle-label span {
+  transform: rotate(45deg);
+}
+.nav-toggle:checked ~ .nav-toggle-label span::before {
+  opacity: 0;
+}
+.nav-toggle:checked ~ .nav-toggle-label span::after {
+  transform: translateY(-7px) rotate(-90deg);
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; 
+}
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+nav a {
+  color: #222831;
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding:4px;
+  opacity: 0;
+  font-weight:bold;
+  transition: opacity 150ms ease-in-out;
+}
+nav a:hover {
+  color: #ff5f40;
+  background-color:white;
+}
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+.logo{
+	height:130px;
+	width:250px;
+	position:relative;
+	top:0px;
+	right:-30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*half */
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+  
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+	position:absolute;
+	right:-260px;
+	top:40px;
+  }
+  nav ul {
+    display: flex;;
+  }
+  nav li {
+    margin-left: 1em;
+    margin-bottom: 0;
+  }
+  nav a {
+    opacity: 1;
+    position: relative;
+
+  }
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform 250ms ease-in-out;
+  }
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
+  ul li a:hover {
+    background: white;
+	padding:5px;
+}
+
+.logo{
+	position:relative;
+	top:-10px;
+	right:-100px;
+}
+
+ul li a:hover::before {
+    transform: scaleX(1);
+}
+
+
+.intro{
+	position:absolute;
+	top:130px;
+	background:#24a19c;
+	width:100%;
+	height:auto;
+	padding-bottom:60px;
+	padding-top:50px;
+}
+
+.intro img{
+	float:right;
+	margin-right:30px;
+	
+}
+
+
+
+.but {
+   background-color: #000;
+    color: white;
+    width: 90px;
+    padding: 20px 25px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 70px;
+    font-size: 19px;
+    cursor: pointer;
+    font-family: 'merriweather';
+	position:relative;
+	top:470px;
+	left:650px;
+	
+	font-weight:bold;
+}
+
+.but:hover{
+	background-color:#f08a5d;
+	color:#251f44;
+}
